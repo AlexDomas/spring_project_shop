@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
+
+
+.addProductSection {
+    position:relative;
+
+    clear: both;
+
+    background: url(/assets/img/honor.jpg);
+    background-repeat: no-repeat;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -3%);
+    width: 1200px;
+    height: 800px;
+    text-align: center;
+    display: flex;
+    margin-top: 50px;
+    color: white;
+    box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+}
+
+.info {
+    width: 45%;
+    background: rgba(20, 20, 20, .8);
+    padding: 30px 0;
+    border-right: 3px solid rgba(10, 180, 180, 1);
+    border-left: 3px solid rgba(10, 180, 180, 1);
+
+
+    h2 {
+
+        font-weight: 300;
+    }
+    p {
+
+        font-size: 18px;
+    }
+    .icon {
+        font-size: 8em;
+        padding: 20px 0;
+        color: rgba(10, 180, 180, 1);
+    }
+}
+
+.addProductForm {
+
+    width: 80%;
+    padding: 30px 0;
+    background: rgba(20, 40, 40, .8);
+    transition: .2s;
+    h2 {
+        font-weight: 300;
+    }
+}
+
+.inputFields {
+    margin: 8px 0;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    width: 500px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: rgba(10, 180, 180, 1);
+    outline: none;
+}
+
+.fileInput{
+    position: static;
+    margin: 8px 230px;
+    font-size: 16px;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid rgba(10, 180, 180, 1);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background: rgba(20, 20, 20, .2);
+    color: rgba(10, 180, 180, 1);
+    outline: none;
+
+
+
+}
+
+.noBullet {
+    list-style-type: none;
+    padding: 0;
+}
+
+#join-btn {
+    border: 1px solid rgba(10, 180, 180, 1);
+    background: rgba(20, 20, 20, .6);
+    font-size: 18px;
+    color: rgba(10, 180, 180, 1);
+    margin-top: 12px;
+    padding: 10px 50px;
+    cursor: pointer;
+    transition: .4s;
+    &:hover {
+        background: rgba(20, 20, 20, .8);
+        padding: 10px 80px;
+    }
+}
+
+.btn-edit{
+    padding: 0.6rem 1.8rem;
+    font-size: 1.30rem;
+    font-weight: 800; 
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6rem;
+    border-radius: 20px 10px 5px 0;
+
+    
+}
+
