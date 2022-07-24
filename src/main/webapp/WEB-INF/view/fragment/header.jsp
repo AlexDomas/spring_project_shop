@@ -20,6 +20,11 @@
                 <li id="contact" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/contact">Contact</a></li>
                 <li id="manageProducts" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/manage/products">Manage Products</a></li>
             </ul>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li id="manageProducts" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/register">Sign Up</a></li>
+                <li id="manageProducts" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/login">Login</a></li>
+            </ul>
         </div>
     </div>
 </nav>

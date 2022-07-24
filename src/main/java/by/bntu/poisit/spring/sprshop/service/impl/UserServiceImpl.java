@@ -6,6 +6,7 @@ import by.bntu.poisit.spring.sprshop.entity.Address;
 import by.bntu.poisit.spring.sprshop.entity.Cart;
 import by.bntu.poisit.spring.sprshop.entity.User;
 import by.bntu.poisit.spring.sprshop.service.UserService;
+import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,16 @@ public class UserServiceImpl implements UserService{
     @Override
     public User getUserByEmail(String email) {
        return userDAO.getUserByEmail(email);
+    }
+
+    @Override
+    public Address getBillingAddress(User user) {
+        return userDAO.getBillingAddress(user);
+    }
+
+    @Override
+    public List<Address> listShippingAddresses(User user) {
+        return userDAO.listShippingAddresses(user);
     }
     
     

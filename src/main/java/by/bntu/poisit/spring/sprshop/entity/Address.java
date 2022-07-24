@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,8 +17,10 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "user_id")
-    private int userId;
+    
+    @ManyToOne
+    private User user;
+    
     @Column(name = "address_line_one")
     private String addressLineOne;
     @Column(name = "address_line_two")
@@ -34,7 +37,7 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{" + "id=" + id + ", userId=" + userId + ", addressLineOne=" + addressLineOne + ", addressLineTwo=" + addressLineTwo + ", city=" + city + ", state=" + state + ", country=" + country + ", postalCode=" + postalCode + ", shipping=" + shipping + ", billing=" + billing + '}';
+        return "Address{" + "id=" + id +  ", addressLineOne=" + addressLineOne + ", addressLineTwo=" + addressLineTwo + ", city=" + city + ", state=" + state + ", country=" + country + ", postalCode=" + postalCode + ", shipping=" + shipping + ", billing=" + billing + '}';
     }
     
     
