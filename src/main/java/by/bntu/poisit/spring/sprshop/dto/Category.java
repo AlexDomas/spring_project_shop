@@ -1,5 +1,5 @@
 
-package by.bntu.poisit.spring.sprshop.entity;
+package by.bntu.poisit.spring.sprshop.dto;
 
 import java.io.Serializable;
 import javax.persistence.Column;

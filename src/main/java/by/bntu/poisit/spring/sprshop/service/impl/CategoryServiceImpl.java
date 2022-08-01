@@ -2,7 +2,7 @@
 package by.bntu.poisit.spring.sprshop.service.impl;
 
 import by.bntu.poisit.spring.sprshop.dao.CategoryDAO;
-import by.bntu.poisit.spring.sprshop.entity.Category;
+import by.bntu.poisit.spring.sprshop.dto.Category;
 import by.bntu.poisit.spring.sprshop.service.CategoryService;
 import java.util.List;
 import javax.transaction.Transactional;

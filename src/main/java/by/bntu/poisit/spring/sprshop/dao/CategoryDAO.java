@@ -1,7 +1,7 @@
 
 package by.bntu.poisit.spring.sprshop.dao;
 
-import by.bntu.poisit.spring.sprshop.entity.Category;
+import by.bntu.poisit.spring.sprshop.dto.Category;
 
 
 

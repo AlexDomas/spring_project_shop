@@ -7,7 +7,7 @@ package by.bntu.poisit.spring.sprshop.dao.impl;
 
 import static br.bntu.poisit.spring.sprshop.constants.SQLContants.*;
 import by.bntu.poisit.spring.sprshop.dao.CategoryDAO;
-import by.bntu.poisit.spring.sprshop.entity.Category;
+import by.bntu.poisit.spring.sprshop.dto.Category;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;

@@ -1,9 +1,9 @@
 package by.bntu.poisit.spring.sprshop.dao.impl;
 
 import by.bntu.poisit.spring.sprshop.dao.UserDAO;
-import by.bntu.poisit.spring.sprshop.entity.Address;
-import by.bntu.poisit.spring.sprshop.entity.Cart;
-import by.bntu.poisit.spring.sprshop.entity.User;
+import by.bntu.poisit.spring.sprshop.dto.Address;
+import by.bntu.poisit.spring.sprshop.dto.Cart;
+import by.bntu.poisit.spring.sprshop.dto.User;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.hibernate.SessionFactory;
@@ -91,6 +91,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public List<Address> listShippingAddresses(User user) {
+        
         String selectQuery = "FROM Address WHERE user =: user AND shipping =: shipping";
         
         try{

@@ -91,6 +91,69 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.badge{
+    background: #ff6347;
+}
+
+.bi-cart-plus-fill{
+    font-size: 22pt;
+
+}
+
+#cart{
+    font-size: 13pt;
+}
+
+.divider{
+    border-bottom: 0.1px solid gray;
+}
+
+nav ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+}
+
+/* отображаем выпадающий список при наведении */
+nav ul li:hover > ul {
+    display:inherit;
+}
+
+/* первый уровень выпадающего списка */
+nav ul ul li {
+    min-width:200px;
+    float:none;
+    display:list-item;
+    position: relative;
+}
+
+#dropdownMenu1{
+    margin-left: 300px;
+    margin-top: 1px;
+    color:#00FA9A;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #dropdownMenu1 {
+        transition: none;
+    }
+}
+#dropdownMenu1:hover, .nav-link:focus {
+    color: #FFFFFF;
+}
+#dropdownMenu1.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: default;
+}
+
+
 hr {
     margin: 1rem 0;
     color: inherit;
@@ -335,6 +398,16 @@ th {
 label {
     display: inline-block;
 }
+
+#register{
+    margin-top: 10px;
+    margin-left: 200px;
+}
+#login{
+    margin-top: 10px;
+
+}
+
 
 button {
     border-radius: 0;
@@ -2157,7 +2230,7 @@ progress {
     top: 0;
     transition: .4s;
     padding: 1.50rem 2.30rem;
-    
+
 
 
 }
@@ -2184,7 +2257,7 @@ input:checked + .slider:before {
 
 .slider.round {
     border-radius: 34px;
-   
+
 }
 
 .slider.round:before {
@@ -11452,6 +11525,17 @@ hr.divider-light {
         color: #212529;
     }
     #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link:hover {
+        color: #9400D3;
+    }
+
+}
+@media (min-width: 992px) {
+    #dropdownMenu1 {
+        box-shadow: none;
+        background-color: transparent;
+    }
+   
+    #dropdownMenu1.dropdown-toggle:hover {
         color: #9400D3;
     }
 }

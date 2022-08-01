@@ -1,17 +1,9 @@
-<%-- 
-    Document   : flows-navbar
-    Created on : Jul 24, 2022, 3:14:02 PM
-    Author     : User
---%>
+<!-- Navigation-->
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="${flowExecutionUrl}&_eventId_home">Home</a>
+        </div>
+    </div>
+</nav>

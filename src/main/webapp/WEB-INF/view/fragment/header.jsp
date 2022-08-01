@@ -1,6 +1,6 @@
 
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-
+<%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
 <spring:url var="img" value="/img"/>
 
@@ -18,12 +18,44 @@
                 <li id="news" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/news">News</a></li>
                 <li id="reviews" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/reviews">Reviews</a></li>
                 <li id="contact" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/contact">Contact</a></li>
-                <li id="manageProducts" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/manage/products">Manage Products</a></li>
+                <security:authorize access="hasAuthority('SUPPLIER')">
+                    <li id="manageProducts" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/manage/products">Manage Products</a></li>
+                </security:authorize>
             </ul>
-            
+
             <ul class="nav navbar-nav navbar-right">
-                <li id="manageProducts" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/register">Sign Up</a></li>
-                <li id="manageProducts" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/login">Login</a></li>
+                <security:authorize access="isAnonymous()">
+                    <li id="register" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/register">Sign Up</a></li>
+                    <li id="login" class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/login">Login</a></li>
+                </security:authorize>
+
+                <security:authorize access="isAuthenticated()">
+                    <li class="dropdown">
+                        <a href="javascript:void(0)"
+                           class="btn btn-default dropdown-toggle"
+                           id="dropdownMenu1"
+                           data-toggle="dropdown">
+                            ${userModel.fullName}
+                            <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <security:authorize access="hasAuthority('USER')">
+                                <li>
+                                    <a id="cart" href="${pageContext.request.contextPath}/cart">
+                                        <i class="bi bi-cart-plus-fill"></i>&nbsp;
+                                        <span class="badge">${userModel.cart.cartLines}</span>
+                                        &nbsp; - &nbsp;&#36; ${userModel.cart.grandTotal}
+                                    </a>
+                                </li>
+                                <li class="divider" role="separator"></li>
+                                </security:authorize>
+                            <li>
+                                <a href="${pageContext.request.contextPath}/permorm-logout">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </security:authorize>
             </ul>
         </div>
     </div>
@@ -45,3 +77,8 @@
         </div>
     </div>
 </header>
+    
+<script>
+    window.userRole = '${userModel.role}';
+</script>
+        

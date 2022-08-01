@@ -1,6 +1,6 @@
 package by.bntu.poisit.spring.sprshop.util;
 
-import by.bntu.poisit.spring.sprshop.entity.Product;
+import by.bntu.poisit.spring.sprshop.dto.Product;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 

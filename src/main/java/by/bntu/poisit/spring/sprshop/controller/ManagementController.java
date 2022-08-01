@@ -1,7 +1,7 @@
 package by.bntu.poisit.spring.sprshop.controller;
 
-import by.bntu.poisit.spring.sprshop.entity.Category;
-import by.bntu.poisit.spring.sprshop.entity.Product;
+import by.bntu.poisit.spring.sprshop.dto.Category;
+import by.bntu.poisit.spring.sprshop.dto.Product;
 import by.bntu.poisit.spring.sprshop.service.CategoryService;
 import by.bntu.poisit.spring.sprshop.service.ProductService;
 import by.bntu.poisit.spring.sprshop.util.FileUploadUtil;

@@ -1,5 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+
 <main class="container-product">
 
     <div class="row">
@@ -81,19 +83,25 @@
             <!-- Product Pricing -->
             <div class="product-price">
                 <span>Price: <strong> &#36; ${product.unitPrice}</span>
-                <c:choose>
-                    <c:when test="${product.quantity < 1}">
+                <security:authorize access="hasAuthority('USER')">
+                    <c:choose>
+                        <c:when test="${product.quantity < 1}">
 
-                        <a href="javascript:void(0)" class="btn btn-primary btn-interact disabled">Add to cart</a>&#160;
+                            <a href="javascript:void(0)" class="btn btn-primary btn-interact disabled">Add to cart</a>&#160;
 
-                    </c:when>
-                    <c:otherwise>
+                        </c:when>
+                        <c:otherwise>
 
-                        <a href="${pageContext.request.contextPath}/cart/add/${product.id}/product" class="btn btn-primary btn-interact"><i class="fa fa-shopping-cart"></i>&#160;&#160;&#160;Add to cart</a>&#160;&#160;
+                            <a href="${pageContext.request.contextPath}/cart/add/${product.id}/product" class="btn btn-primary btn-interact"><i class="fa fa-shopping-cart"></i>&#160;&#160;&#160;Add to cart</a>&#160;&#160;
 
-                    </c:otherwise>
+                        </c:otherwise>
 
-                </c:choose>
+                    </c:choose>
+                </security:authorize>
+
+                <security:authorize access="hasAuthority('SUPPLIER')">
+                    <a href="${pageContext.request.contextPath}/manage/${product.id}/product" class="btn btn-primary btn-interact"><i class="fa fa-pencil"></i>&#160;&#160;&#160;Edit Product</a>&#160;&#160;
+                </security:authorize>
 
                 <a href="${pageContext.request.contextPath}/show/all/products" class="btn btn-primary btn-interact"><i class="bi bi-arrow-left-circle"></i>&#160;&#160;Back</a> 
             </div>

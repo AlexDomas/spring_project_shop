@@ -1,9 +1,9 @@
 
 package by.bntu.poisit.spring.sprshop.dao;
 
-import by.bntu.poisit.spring.sprshop.entity.Address;
-import by.bntu.poisit.spring.sprshop.entity.Cart;
-import by.bntu.poisit.spring.sprshop.entity.User;
+import by.bntu.poisit.spring.sprshop.dto.Address;
+import by.bntu.poisit.spring.sprshop.dto.Cart;
+import by.bntu.poisit.spring.sprshop.dto.User;
 import java.util.List;
 
 

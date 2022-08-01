@@ -3,6 +3,7 @@ package by.bntu.poisit.spring.sprshop.configuration;
 
 import java.util.Properties;
 import javax.sql.DataSource;
+import org.apache.commons.dbcp2.BasicDataSource;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -13,9 +14,9 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-/*
+
 @Configuration
-@ComponentScan(basePackages={"br.bntu.poisit.spring.sprshop.entity"})
+@ComponentScan(basePackages={"by.bntu.poisit.spring.sprshop.dto"})
 @EnableTransactionManagement
 @PropertySource("classpath:application.properties")
 public class HibernateConfig {
@@ -24,7 +25,7 @@ public class HibernateConfig {
 	private String DATABASE_URL;
 	@Value("${spring.datasource.driver-class-name}")
 	private String DATABASE_DRIVER;
-	@Value("${spring.jpa.database-platform}")
+	@Value("${spring.jpa.properties.hibernate.dialect}")
 	private String DATABASE_DIALECT;
 	@Value("${spring.datasource.username}")
 	private String DATABASE_USERNAME;
@@ -56,7 +57,7 @@ public class HibernateConfig {
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource);
 		
 		builder.addProperties(getHibernateProperties());
-		builder.scanPackages("br.bntu.poisit.spring.sprshop.entity");
+		builder.scanPackages("by.bntu.poisit.spring.sprshop.dto");
 		
 		return builder.buildSessionFactory();
 		
@@ -89,4 +90,4 @@ public class HibernateConfig {
 	
 	
 }
-*/
+

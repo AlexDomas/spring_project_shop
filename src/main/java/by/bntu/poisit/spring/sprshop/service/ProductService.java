@@ -5,7 +5,7 @@
  */
 package by.bntu.poisit.spring.sprshop.service;
 
-import by.bntu.poisit.spring.sprshop.entity.Product;
+import by.bntu.poisit.spring.sprshop.dto.Product;
 import java.util.List;
 
 

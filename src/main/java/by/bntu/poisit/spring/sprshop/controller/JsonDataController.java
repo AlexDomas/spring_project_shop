@@ -1,7 +1,7 @@
 
 package by.bntu.poisit.spring.sprshop.controller;
 
-import by.bntu.poisit.spring.sprshop.entity.Product;
+import by.bntu.poisit.spring.sprshop.dto.Product;
 import by.bntu.poisit.spring.sprshop.service.ProductService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
