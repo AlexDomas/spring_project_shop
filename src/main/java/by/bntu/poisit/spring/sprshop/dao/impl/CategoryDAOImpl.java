@@ -5,12 +5,11 @@
  */
 package by.bntu.poisit.spring.sprshop.dao.impl;
 
-import static br.bntu.poisit.spring.sprshop.constants.SQLContants.*;
+import static by.bntu.poisit.spring.sprshop.constants.SQLContants.*;
 import by.bntu.poisit.spring.sprshop.dao.CategoryDAO;
 import by.bntu.poisit.spring.sprshop.dto.Category;
 import java.util.ArrayList;
 import java.util.List;
-import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

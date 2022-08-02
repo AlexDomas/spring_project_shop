@@ -438,3 +438,7 @@ p12{
 
         }
     }
+    
+    .table-responsive{
+        overflow-x: hidden;
+    }

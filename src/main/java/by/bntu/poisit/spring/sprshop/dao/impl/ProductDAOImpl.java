@@ -1,6 +1,6 @@
 package by.bntu.poisit.spring.sprshop.dao.impl;
 
-import static br.bntu.poisit.spring.sprshop.constants.SQLContants.*;
+import static by.bntu.poisit.spring.sprshop.constants.SQLContants.*;
 import by.bntu.poisit.spring.sprshop.dao.ProductDAO;
 import by.bntu.poisit.spring.sprshop.dto.Product;
 import java.util.List;

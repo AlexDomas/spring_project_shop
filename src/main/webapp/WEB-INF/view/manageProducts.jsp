@@ -115,42 +115,40 @@
         <div class="row">
             <div class="col-xs-12">
 
-                <table id="adminProductsTable" class="table table-borderd">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Brand</th>
-                            <th>Quantity</th>
-                            <th>Unit Price</th>
-                            <th>Active</th>
-                            <th>Edit</th>
-                        </tr>
-                    </thead>
+                <div class="container-fluid">
+                    <div class="table-responsive">
+                        <table id="adminProductsTable" class="table table-borderd">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Brand</th>
+                                    <th>Quantity</th>
+                                    <th>Unit Price</th>
+                                    <th>Active</th>
+                                    <th>Edit</th>
+                                </tr>
+                            </thead>
 
-
-
-                    <tfoot>
-                        <tr>
-                            <th>Id</th>
-                            <th>Image</th>
-                            <th>Name</th>
-                            <th>Brand</th>
-                            <th>Quantity</th>
-                            <th>Unit Price</th>
-                            <th>Active</th>
-                            <th>Edit</th> 
-                        </tr>
-                    </tfoot>
-                </table>
-
+                            <tfoot>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Brand</th>
+                                    <th>Quantity</th>
+                                    <th>Unit Price</th>
+                                    <th>Active</th>
+                                    <th>Edit</th> 
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
             </div>
-
         </div>
-
     </div>
-
 
     <div class="modal fade" id="myCategoryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
