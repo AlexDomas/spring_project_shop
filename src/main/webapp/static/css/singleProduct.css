@@ -12,8 +12,9 @@
 }
   
 .right-column {
-  width: 60%;
+  width: 70%;
   margin-top: 60px;
+  margin-left: 300px;
 }
 
 .left-column img {
@@ -149,6 +150,7 @@
   display: flex;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
+  margin-left: 160px;
 }
   
 .product-price span {
@@ -191,7 +193,7 @@
   }
   
   .left-column img {
-    width: 300px;
+    width: auto;
     right: 0;
     top: -65px;
     left: initial;
@@ -203,4 +205,10 @@
     width: 220px;
     top: -85px;
   }
+}
+
+#singleProductBlack{
+    width: auto;
+    height: 400px;
+    margin-right: 60px;
 }

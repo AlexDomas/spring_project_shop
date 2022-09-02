@@ -5,9 +5,9 @@
  */
 package by.bntu.poisit.spring.sprshop.dao.impl;
 
-import static by.bntu.poisit.spring.sprshop.constants.SQLContants.*;
+import static by.bntu.poisit.spring.sprshop.constant.SQLConstant.*;
 import by.bntu.poisit.spring.sprshop.dao.CategoryDAO;
-import by.bntu.poisit.spring.sprshop.dto.Category;
+import by.bntu.poisit.spring.sprshop.entity.Category;
 import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.SessionFactory;

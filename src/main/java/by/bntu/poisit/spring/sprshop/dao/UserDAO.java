@@ -1,9 +1,8 @@
 
 package by.bntu.poisit.spring.sprshop.dao;
 
-import by.bntu.poisit.spring.sprshop.dto.Address;
-import by.bntu.poisit.spring.sprshop.dto.Cart;
-import by.bntu.poisit.spring.sprshop.dto.User;
+import by.bntu.poisit.spring.sprshop.entity.Address;
+import by.bntu.poisit.spring.sprshop.entity.User;
 import java.util.List;
 
 
@@ -11,14 +10,20 @@ public interface UserDAO {
     
     boolean addUser(User user);
     
+     boolean updateUser(User user);
+    
     User getUserByEmail(String email);
     
     boolean addAddress(Address address);
     
-    Address getBillingAddress(User user);
+    boolean updateAddress(Address address);
     
-    List<Address> listShippingAddresses(User user);
+    Address getBillingAddress(int userId);
     
-    boolean updateCart(Cart cart);
+    Address getAddress(int addressId);
+    
+    List<Address> listShippingAddresses(int userId);
+    
+    boolean existsUserByEmail(String email);
     
 }

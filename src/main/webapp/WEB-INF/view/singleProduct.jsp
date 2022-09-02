@@ -12,9 +12,9 @@
 
                 <!-- Left Column / Headphones Image -->
                 <div class="left-column">
-                    <img data-image="black" src="${pageContext.request.contextPath}/img/products/black/${product.code}.jpg" alt="">
+                    <img data-image="black" class="active" id="singleProductBlack" src="${pageContext.request.contextPath}/img/products/black/${product.code}.jpg" alt="">
                     <img data-image="blue" src="${pageContext.request.contextPath}/img/products/blue/${product.code}.jpg" alt="">
-                    <img data-image="red" class="active" src="${pageContext.request.contextPath}/img/products/red/${product.code}.jpg" alt="">
+                    <img data-image="red" src="${pageContext.request.contextPath}/img/products/red/${product.code}.jpg" alt="">
                 </div>
 
             </div>

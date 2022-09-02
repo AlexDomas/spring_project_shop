@@ -1,7 +1,9 @@
 package by.bntu.poisit.spring.sprshop.service.impl;
 
 import by.bntu.poisit.spring.sprshop.dao.CartLineDAO;
-import by.bntu.poisit.spring.sprshop.dto.CartLine;
+import by.bntu.poisit.spring.sprshop.entity.Cart;
+import by.bntu.poisit.spring.sprshop.entity.CartLine;
+import by.bntu.poisit.spring.sprshop.entity.OrderDetail;
 import by.bntu.poisit.spring.sprshop.service.CartLineService;
 import java.util.List;
 import javax.transaction.Transactional;
@@ -60,6 +62,18 @@ public class CartLineServiceImpl implements CartLineService{
     @Transactional
     public boolean delete(CartLine cartLine) {
         return cartLineDAO.delete(cartLine);
+    }
+    
+    @Override
+    @Transactional
+    public boolean updateCart(Cart cart){
+        return cartLineDAO.updateCart(cart);
+    }
+
+    @Override
+    @Transactional
+    public boolean addOrderDetail(OrderDetail orderDetail) {
+        return cartLineDAO.addOrderDetail(orderDetail);
     }
     
 }

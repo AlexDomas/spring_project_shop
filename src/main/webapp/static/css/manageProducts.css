@@ -1,33 +1,41 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
 
+.available{
+    background-image: url(https://lookw.ru/12/1213/1638153411-1006.jpg);
+    background-size: 100%;
 
+}
 
 .addProductSection {
+    margin-bottom: 80px;
     position:relative;
-
     clear: both;
-
-    background: url(/assets/img/honor.jpg);
+    background-image: url(/assets/img/honor.jpg);
     background-repeat: no-repeat;
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -3%);
+    transform: translate(-50%, 3%);
     width: 1200px;
-    height: 800px;
+    height: 900px;
     text-align: center;
     display: flex;
-    margin-top: 50px;
     color: white;
     box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+}
+
+.help-block{
+    font-style: normal;
+    color: #00FA9A;
+    font-family: 'Open Sans', Arial, sans-serif;
 }
 
 .info {
     width: 45%;
     background: rgba(20, 20, 20, .8);
     padding: 30px 0;
-    border-right: 3px solid rgba(10, 180, 180, 1);
-    border-left: 3px solid rgba(10, 180, 180, 1);
+    border-right: 3px solid #9400D3;
+    border-left: 3px solid #9400D3;
 
 
     h2 {
@@ -50,6 +58,7 @@
     width: 80%;
     padding: 30px 0;
     background: rgba(20, 40, 40, .8);
+    border-right: 3px solid #9400D3;
     transition: .2s;
     h2 {
         font-weight: 300;
@@ -62,13 +71,22 @@
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
     width: 500px;
-    border: 1px solid rgba(10, 180, 180, 1);
+    border: 1px solid #9400D3;;
     border-top: none;
     border-left: none;
     border-right: none;
     background: rgba(20, 20, 20, .2);
-    color: rgba(10, 180, 180, 1);
+    color: #00FA9A;
     outline: none;
+}
+
+.inputFields:hover{
+    transform: scale(1.06);
+}
+
+option{
+    background: #fff;
+    color: #000;
 }
 
 .fileInput{
@@ -82,10 +100,8 @@
     border-left: none;
     border-right: none;
     background: rgba(20, 20, 20, .2);
-    color: rgba(10, 180, 180, 1);
+    color: #9400D3;
     outline: none;
-
-
 
 }
 
@@ -94,19 +110,34 @@
     padding: 0;
 }
 
+.alert-success{
+    color: #000000;
+    background-color: #00FA9A;
+    margin-left: 400px;
+    margin-top: 30px;
+}
+
 #join-btn {
-    border: 1px solid rgba(10, 180, 180, 1);
-    background: rgba(20, 20, 20, .6);
-    font-size: 18px;
-    color: rgba(10, 180, 180, 1);
-    margin-top: 12px;
-    padding: 10px 50px;
-    cursor: pointer;
-    transition: .4s;
-    &:hover {
-        background: rgba(20, 20, 20, .8);
-        padding: 10px 80px;
-    }
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #9400D3;
+    color: #eee;
+    font-weight: bold;
+    margin-bottom: 0.8em;
+    margin-top: 0.5em;
+    text-transform: uppercase;
+    cursor:pointer;
+    width: 300px;
+    height: 40px;
+    border:none;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+}
+
+#join-btn:hover {
+    background-color: #00FA9A;
+    color: black;
 }
 
 .btn-edit{
@@ -117,7 +148,18 @@
     border: none;
     border-radius: 6rem;
     border-radius: 20px 10px 5px 0;
-
-    
 }
 
+.available-products{
+    color: #00FA9A;
+}
+
+label{
+    color: #00FA9A;
+    font-family: Merriweather Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; 
+}
+
+.dataTables_info{
+    color: #00FA9A;
+    font-family: Merriweather Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji; 
+}

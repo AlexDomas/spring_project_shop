@@ -1,11 +1,11 @@
 package by.bntu.poisit.spring.sprshop.controller;
 
-import by.bntu.poisit.spring.sprshop.dto.Category;
-import by.bntu.poisit.spring.sprshop.dto.Product;
+import by.bntu.poisit.spring.sprshop.entity.Category;
+import by.bntu.poisit.spring.sprshop.entity.Product;
 import by.bntu.poisit.spring.sprshop.service.CategoryService;
 import by.bntu.poisit.spring.sprshop.service.ProductService;
 import by.bntu.poisit.spring.sprshop.util.FileUploadUtil;
-import by.bntu.poisit.spring.sprshop.util.ProductValidator;
+import by.bntu.poisit.spring.sprshop.validator.ProductValidator;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/manage")
@@ -73,6 +72,19 @@ public class ManagementController {
         Product nProduct = productService.get(id);
 
         model.addAttribute("product", nProduct);
+
+        return "page";
+    }
+    
+    @RequestMapping(value = "/delete/{id}/product", method = RequestMethod.GET)
+    public String deleteProduct(@PathVariable int id, Model model) {
+
+        model.addAttribute("userClickManageProducts", true);
+        model.addAttribute("title", "Manage Products");
+
+        productService.deleteProduct(id);
+
+        model.addAttribute("message", "Product with id = " + id + "successfully deleted!");
 
         return "page";
     }
@@ -143,7 +155,6 @@ public class ManagementController {
 
     @ModelAttribute("categories")
     public List<Category> getCategories() {
-
         return categoryService.list();
     }
     

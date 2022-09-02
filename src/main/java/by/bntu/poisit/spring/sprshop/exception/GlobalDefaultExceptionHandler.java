@@ -2,49 +2,42 @@ package by.bntu.poisit.spring.sprshop.exception;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.NoHandlerFoundException;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @ControllerAdvice
 public class GlobalDefaultExceptionHandler {
 
     @ExceptionHandler(NoHandlerFoundException.class)
-    public ModelAndView handlerNoHandlerFoundException() {
+    public String handlerNoHandlerFoundException(Model model) {
 
-        ModelAndView mv = new ModelAndView("error");
+        model.addAttribute("errorTitle", "The page is not constructed!");
 
-        mv.addObject("errorTitle", "The page is not constructed!");
+        model.addAttribute("errorDescription", "The page you are looking for is not available now!");
 
-        mv.addObject("errorDescription", "The page you are looking for is not available now!");
+        model.addAttribute("title", "404 Error Page");
 
-        mv.addObject("title", "404 Error Page");
-
-        return mv;
+        return "error";
     }
 
     @ExceptionHandler(ProductNotFoundException.class)
-    public ModelAndView handlerProductNotFoundException() {
+    public String handlerProductNotFoundException(Model model) {
 
-        ModelAndView mv = new ModelAndView("error");
+        model.addAttribute("errorTitle", "Product not available!");
 
-        mv.addObject("errorTitle", "Product not available!");
+        model.addAttribute("errorDescription", "The product you are looking for is not available right now!");
 
-        mv.addObject("errorDescription", "The product you are looking for is not available right now!");
+        model.addAttribute("title", "Product Unavailable");
 
-        mv.addObject("title", "Product Unavailable");
-
-        return mv;
+        return "error";
     }
     
     @ExceptionHandler(Exception.class)
-    public ModelAndView handlerException(Exception ex) {
+    public String handlerException(Exception ex, Model model) {
 
-        ModelAndView mv = new ModelAndView("error");
-
-        mv.addObject("errorTitle", "Contact your Administrator!");
+        model.addAttribute("errorTitle", "Contact your Administrator!");
 
         //Only for debugging!
         StringWriter sw = new StringWriter();
@@ -52,11 +45,11 @@ public class GlobalDefaultExceptionHandler {
         
         ex.printStackTrace(pw);
         
-        mv.addObject("errorDescription", sw.toString());
+        model.addAttribute("errorDescription", sw.toString());
 
-        mv.addObject("title", "Error");
+        model.addAttribute("title", "Error");
 
-        return mv;
+        return "error";
     }
 
 }

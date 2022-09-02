@@ -45,15 +45,20 @@
         <link href="${css}/footer.css" rel="stylesheet" />
         <link href="${css}/manageProducts.css" rel="stylesheet" />
         <link href="${css}/switch.css" rel="stylesheet" />
-        
+
         <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     </head>
     <body id="page-top">
 
+        <!-- Navigation-->
 
-        <div class="wrapper">
-            
-            <%@include file="flows-navbar.jsp"%>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="${flowExecutionUrl}&_eventId_home">Home</a>
+                </div>
+            </div>
+        </nav>
 
-            <div class="content">
+    </body>

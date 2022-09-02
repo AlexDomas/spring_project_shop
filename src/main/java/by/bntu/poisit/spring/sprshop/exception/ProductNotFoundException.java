@@ -28,6 +28,4 @@ public class ProductNotFoundException extends Exception implements Serializable{
         
     }
     
-    
-    
 }

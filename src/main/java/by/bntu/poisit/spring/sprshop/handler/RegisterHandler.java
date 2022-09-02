@@ -1,15 +1,17 @@
 package by.bntu.poisit.spring.sprshop.handler;
 
-import by.bntu.poisit.spring.sprshop.dto.Address;
-import by.bntu.poisit.spring.sprshop.dto.Cart;
-import by.bntu.poisit.spring.sprshop.dto.User;
-import by.bntu.poisit.spring.sprshop.model.RegisterModel;
+import by.bntu.poisit.spring.sprshop.entity.Address;
+import by.bntu.poisit.spring.sprshop.entity.Cart;
+import by.bntu.poisit.spring.sprshop.entity.User;
+import by.bntu.poisit.spring.sprshop.dto.RegisterDto;
 import by.bntu.poisit.spring.sprshop.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
+
+import static by.bntu.poisit.spring.sprshop.constant.MessageMailConstant.*;
 
 @Component
 public class RegisterHandler {
@@ -20,21 +22,24 @@ public class RegisterHandler {
     @Autowired
     private UserService userService;
     
-    public RegisterModel init(){
+    @Autowired
+    private MailHandler mailHandler;
+    
+    public RegisterDto init(){
         
-        return new RegisterModel();
+        return new RegisterDto();
         
     }
     
-    public void addUser(RegisterModel registerModel, User user){
+    public void addUser(RegisterDto registerDto, User user){
         
-        registerModel.setUser(user);
+        registerDto.setUser(user);
         
     }
     
-    public void addBilling(RegisterModel registerModel, Address billing){
+    public void addBilling(RegisterDto registerDto, Address billing){
         
-        registerModel.setBilling(billing);
+        registerDto.setBilling(billing);
         
     }
     
@@ -69,13 +74,13 @@ public class RegisterHandler {
         
     }
     
-    public String saveAll(RegisterModel registerModel){
+    public String saveAll(RegisterDto registerDto){
         
         String transitionValue = "success";
         
         //fetch the user
         
-        User user = registerModel.getUser();
+        User user = registerDto.getUser();
         
         if(user.getRole().equals("USER")){
             
@@ -94,13 +99,15 @@ public class RegisterHandler {
         
         //get the address
         
-        Address billing = registerModel.getBilling();
+        Address billing = registerDto.getBilling();
         
         billing.setUserId(user.getId());
         billing.setBilling(true);
         
         //save the address
         userService.addAddress(billing);
+        
+        mailHandler.sendMessage(user.getEmail(), MESSAGE_REGISTRATION_SUBJECT, MESSAGE_REGISTRATION_TEXT);
         
         return transitionValue;
         

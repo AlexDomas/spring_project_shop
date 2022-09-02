@@ -1,0 +1,203 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
+
+h1{
+    font-size: 3em;
+    margin: 0 0 0.5em 0;
+    text-align: center;
+    font-family: 'Cookie', cursive;
+}
+h1 img{
+    height: auto;
+    margin: 0 auto;
+    max-width: 240px;
+    width: 100%;
+}
+
+.navbar-brand{
+    font-size: 27px;
+    font-family: Galada;
+    color: #00FA9A;
+}
+
+.navbar-brand:hover{
+    color: #00FA9A;
+}
+
+.control-label{
+    color: #FFFFFF;
+}
+
+.help-block{
+    color:#00FA9A;
+}
+
+.alert-success{
+    color: #000000;
+    background-color: #00FA9A;
+}
+
+.alert-danger{
+    color: #000000;
+    background-color: #DB7093;
+    border-color: #000000;
+}
+
+
+/* ---------- FONTAWESOME ---------- */
+
+[class*="fontawesome-"]:before {
+    font-family: 'FontAwesome', sans-serif;
+}
+
+/* ---------- GENERAL ---------- */
+
+body {
+    background-color: #2c3338;
+    color: #606468;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    background: url('https://mobimg.b-cdn.net/v3/fetch/db/db1f39868852af726d880e6ea07c09bd.jpeg');
+    background-size: 100%;
+}
+
+a {
+    color: #eee;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #00FA9A;
+    text-decoration: none;
+}
+
+input {
+    border: none;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    padding: 0;
+    -webkit-appearance: none;
+}
+
+p {
+    line-height: 1.5em;
+}
+
+.clearfix { *zoom: 1; } /* For IE 6/7 */
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: "";
+
+}
+.clearfix:after { clear: both; }
+/* ---------- LOGIN ---------- */
+
+#billing {
+    margin: 150px auto;
+    width: 390px;
+}
+
+#username-error{
+    color: #00FA9A;
+}
+
+#password-error{
+    color: #00FA9A;
+}
+
+h3{
+    font-size: 20px;
+    color: #00FA9A;
+}
+
+#billing form i {
+    background-color: #363b41;
+    border-radius: 3px 0px 0px 3px;
+    -moz-border-radius: 3px 0px 0px 3px;
+    -webkit-border-radius: 3px 0px 0px 3px;
+    color: #606468;
+    display: block;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+    position: absolute;
+}
+
+#billing form span {
+    background-color: #363b41;
+    border-radius: 3px 0px 0px 3px;
+    -moz-border-radius: 3px 0px 0px 3px;
+    -webkit-border-radius: 3px 0px 0px 3px;
+    color: #606468;
+    display: block;
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 50px;
+    position: absolute;
+}
+
+
+#billing form input {
+    height: 50px;
+    outline:none;
+}
+
+#billing form input[type="text"], input[type="password"] {
+    background-color: #3b4148;
+    border-radius: 0px 3px 3px 0px;
+    -moz-border-radius: 0px 3px 3px 0px;
+    -webkit-border-radius: 0px 3px 3px 0px;
+    color: #606468;
+    margin-bottom: 1em;
+    padding: 0 60px;
+    width: 400px;
+    color: #00FA9A;
+}
+
+#billing form input:focus {
+    color:#fff;
+}
+
+#billing form input[type="submit"] {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #9400D3;
+    color: #eee;
+    font-weight: bold;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+    cursor:pointer;
+    width: 400px;
+}
+
+#billing form input[type="submit"]:hover {
+    background-color: #00FA9A;
+    color: black;
+}
+
+#billing > p {
+    text-align: center;
+}
+
+#billing > p span {
+    padding-left: 5px;
+}
+
+@-webkit-keyframes slideOut{
+    0%{top:-30px; opacity: 0;}
+    100%{top:0px; opacity: 1;}
+}
+
+
+

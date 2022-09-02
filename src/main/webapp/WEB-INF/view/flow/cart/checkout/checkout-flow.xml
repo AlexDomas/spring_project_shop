@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+	
+
+	<var name="shipping" class="by.bntu.poisit.spring.sprshop.entity.Address"/>
+	
+	<on-start>
+		<evaluate expression="checkoutHandler.init(currentUser.name)" result="flowScope.checkoutDto"/>
+	</on-start>
+
+	<!-- view the address selection page-->
+	<view-state id="shipping" view="flow/cart/checkout/order-address" model="shipping">
+		<on-entry>
+			<evaluate expression="checkoutHandler.getShippingAddresses(flowScope.checkoutDto)" result="viewScope.addresses"/>	
+		</on-entry>
+		<transition on="addressSelection" to="saveAddressSelection" validate="false"/>
+		<transition on="saveAddress" to="saveAddress" />
+	</view-state>
+
+	<!-- action state to save the address -->
+	<action-state id="saveAddressSelection">		
+		<evaluate expression="checkoutHandler.saveAddressSelection(flowScope.checkoutDto, requestParameters.shippingId)" />
+		<transition on="success" to="payment" />
+	</action-state>
+
+	
+	<!-- action state to save the address -->
+	<action-state id="saveAddress">		
+		<evaluate expression="checkoutHandler.saveAddress(flowScope.checkoutDto, shipping)" />
+		<transition on="success" to="payment" />
+	</action-state>
+
+	<!-- view the payment mode page-->
+	<view-state id="payment" view="flow/cart/checkout/order-payment" model="flowScope.checkoutDto">		
+		<transition on="pay" to="saveOrder" />	
+	</view-state>
+
+	<!-- action state to save the address -->
+	<action-state id="saveOrder">		
+		<evaluate expression="checkoutHandler.saveOrder(flowScope.checkoutDto)" />
+		<transition on="success" to="receipt"/>
+	</action-state>
+	
+	<!-- end state -->
+	<end-state id="receipt" view="flow/cart/checkout/order-confirm">
+		<on-entry>
+			<evaluate expression="checkoutHandler.getOrderDetail(flowScope.checkoutDto)" result="requestScope.orderDetail"/>
+		</on-entry>
+	</end-state>
+
+	<end-state id="home" view="externalRedirect:contextRelative:/home" />
+	<end-state id="error" view="flow/fragment/flows-error" />
+	
+	<!-- global transition -->
+	<global-transitions>
+		<transition on="home" to="home" validate="false" />
+ 		<transition on-exception="java.lang.Exception" to="error" />
+	</global-transitions>
+	
+</flow>

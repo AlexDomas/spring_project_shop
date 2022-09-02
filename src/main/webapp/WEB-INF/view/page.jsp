@@ -1,14 +1,13 @@
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" trimDirectiveWhitespaces="true"%>
 
 <spring:url var="css" value="/css" />
 <spring:url var="js" value="/js" />
+<spring:url var="img" value="/img" />
 <spring:url var="video" value="/video"/>
-
-
+<spring:url var="imgPopularProducts" value="/black"/>
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
@@ -48,17 +47,19 @@
         <link href="${css}/footer.css" rel="stylesheet" />
         <link href="${css}/manageProducts.css" rel="stylesheet" />
         <link href="${css}/switch.css" rel="stylesheet" />
+        <link href="${css}/slider.css" rel="stylesheet" />
         
+        <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     </head>
     <body id="page-top">
 
+        <div class="se-pre-con"></div>
 
         <div class="wrapper">
 
             <jsp:include page="fragment/header.jsp" />
-
 
             <!-- About-->
 
@@ -99,6 +100,10 @@
                 <c:if test="${userClickManageProducts == true}">
                     <jsp:include page="manageProducts.jsp" />
                 </c:if>
+                
+                <c:if test="${userClickShowCart == true}">
+                    <jsp:include page="cart.jsp" />
+                </c:if>
 
             </div>
 
@@ -115,9 +120,8 @@
             <script src="${js}/scripts.js"></script>
             <script src="${js}/singleProduct.js"></script>
             <script src="${js}/bootbox.min.js"></script>
-            
+            <script src="${js}/activeUserSignal.js"></script>
             <script src="${js}/jquery.validate.js"></script>
-
             <script src="${js}/app.js"></script>
             <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 

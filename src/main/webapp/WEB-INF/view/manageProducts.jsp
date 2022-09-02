@@ -9,141 +9,131 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<div class="container">
+<div class="available">
+    <div class="container">
 
-    <c:if test="${not empty message}">
+        <c:if test="${not empty message}">
 
-        <div class="col-xs-12">
+            <div class="row">
 
-            <div class="alert alert-success alert-dismissible">
+                <div class="col-xs-12 col-md-offset-2 col-md-8">
 
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                ${message}
+                    <div class="alert alert-success">${message}</div>
+                </div>
+
             </div>
 
+        </c:if>
+
+        <div style="background:url(https://images.hdqwalls.com/download/aliens-geometry-4d-colors-deviation-89-3840x2400.jpg); background-size: 100%;" class="addProductSection" >
+            <div class="info">
+                <h2>Additional information</h2>
+            </div>
+
+            <sf:form class="addProductForm" modelAttribute="product" action="${pageContext.request.contextPath}/manage/products" method="POST" enctype="multipart/form-data">
+                <h2>Product Management</h2>
+                <ul class="noBullet">
+                    <li>
+
+                        <sf:input type="text" path="name" class="inputFields"  placeholder="Product Name" />
+                        <br><sf:errors path="name" cssClass="help-block" element="em"/> 
+                    </li>
+                    <li>
+
+                        <sf:input type="text" class="inputFields" path="brand" placeholder="Brand Name"/>
+                        <br><sf:errors path="brand" cssClass="help-block" element="em"/> 
+                    </li>
+                    <li>
+                        <sf:textarea style="resize: none" path="description" rows="4" class="inputFields" placeholder="Description"/>
+                        <br><sf:errors path="description" cssClass="help-block" element="em"/> 
+                    </li>
+
+                    <li>
+                        <sf:input type="number" class="inputFields" path="unitPrice" placeholder="Unit Price" min="1" max="10000000"/>
+                        <br><sf:errors path="unitPrice" cssClass="help-block" element="em"/> 
+                    </li>
+
+                    <li>
+                        <sf:input type="number" class="inputFields" path="quantity" placeholder="Quantity Available" min="0" max="100" />
+                        <br><sf:errors path="quantity" cssClass="help-block" element="em"/> 
+                    </li>
+
+                    <li>
+                        <sf:input type="file" class="inputFields" path="file"/>
+                        <br><sf:errors path="file" cssClass="help-block" element="em"/> 
+                    </li>
+
+                    <li>
+                        <sf:select class = "inputFields" path="categoryId" id="categoryId" items="${categories}" itemLabel="name" itemValue="id"/>
+                        <c:if test="${product.id == 0}">
+                            </br>
+                            <button type="button" id="join-btn" data-bs-toggle="modal" data-bs-target="#myCategoryModal">
+                                Add Category
+                            </button>
+                        </c:if>
+                    </li>
+
+                    <li id="center-btn">
+                        <input type="submit" id="join-btn" name="submit" value="Submit">
+
+                            <sf:hidden path="id"/>
+                            <sf:hidden path="code"/>
+                            <sf:hidden path="supplierId"/>
+                            <sf:hidden path="active"/>
+                            <sf:hidden path="purchases"/>
+                            <sf:hidden path="views"/>
+                    </li>
+                </ul>
+            </sf:form>
+
+
         </div>
 
-    </c:if>
-
-    <div style="background:url(${img}/honor.jpg)" class="addProductSection" >
-        <div class="info">
-            <h2>Additional information</h2>
-            <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
-            <%if (request.getAttribute("errorId") != null) {%>
-            <p style="color: rgba(10, 180, 180, 1);"> <%out.println(request.getAttribute("errorId"));%> </p>
-            <%}%>
-            <%if (request.getAttribute("errorIdRepeat") != null) {%>
-            <p style="color: rgba(10, 180, 180, 1);"> <%out.println(request.getAttribute("errorIdRepeat"));%> </p>
-            <%}%>      
-
-        </div>
-
-        <sf:form class="addProductForm" modelAttribute="product" action="${pageContext.request.contextPath}/manage/products" method="POST" enctype="multipart/form-data">
-            <h2>Product Management</h2>
-            <ul class="noBullet">
-                <li>
-
-                    <sf:input type="text" path="name" class="inputFields"  placeholder="Product Name" />
-                    <br><sf:errors path="name" cssClass="help-block" element="em"/> 
-                </li>
-                <li>
-
-                    <sf:input type="text" class="inputFields" path="brand" placeholder="Brand Name"/>
-                    <br><sf:errors path="brand" cssClass="help-block" element="em"/> 
-                </li>
-                <li>
-
-                    <sf:textarea style="resize: none" path="description" rows="4" class="inputFields" placeholder="Description"/>
-                    <br><sf:errors path="description" cssClass="help-block" element="em"/> 
-                </li>
-
-                <li>
-
-                    <sf:input type="number" class="inputFields" path="unitPrice" placeholder="Unit Price" min="1" max="10000000"/>
-                    <br><sf:errors path="unitPrice" cssClass="help-block" element="em"/> 
-                </li>
-
-                <li>
-
-                    <sf:input type="number" class="inputFields" path="quantity" placeholder="Quantity Available" min="0" max="100" />
-                    <br><sf:errors path="quantity" cssClass="help-block" element="em"/> 
-                </li>
-
-                <li>
-
-                    <sf:input type="file" class="inputFields" path="file"/>
-                    <br><sf:errors path="file" cssClass="help-block" element="em"/> 
-                </li>
-
-                <li>
-                    <sf:select class = "inputFields" path="categoryId" id="categoryId" items="${categories}" itemLabel="name" itemValue="id"/>
-                    <c:if test="${product.id == 0}">
-
-                        </br>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myCategoryModal">
-                            Add Category
-                        </button>
-
-
-                    </c:if>
-                </li>
-
-                <li id="center-btn">
-                    <input type="submit" id="join-btn" name="submit" value="Submit">
-
-                    <sf:hidden path="id"/>
-                    <sf:hidden path="code"/>
-                    <sf:hidden path="supplierId"/>
-                    <sf:hidden path="active"/>
-                    <sf:hidden path="purchases"/>
-                    <sf:hidden path="views"/>
-                </li>
-            </ul>
-        </sf:form>
-
-
-    </div>
-
-    <div class="row">
-
-        <div class="col-xs-12">
-
-            <h3>Available Products</h3>
-
-        </div>
 
         <div class="row">
+
             <div class="col-xs-12">
 
-                <div class="container-fluid">
-                    <div class="table-responsive">
-                        <table id="adminProductsTable" class="table table-borderd">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th>Brand</th>
-                                    <th>Quantity</th>
-                                    <th>Unit Price</th>
-                                    <th>Active</th>
-                                    <th>Edit</th>
-                                </tr>
-                            </thead>
+                <h3 class="available-products">Available Products</h3>
 
-                            <tfoot>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th>Brand</th>
-                                    <th>Quantity</th>
-                                    <th>Unit Price</th>
-                                    <th>Active</th>
-                                    <th>Edit</th> 
-                                </tr>
-                            </tfoot>
-                        </table>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-9">
+
+                    
+                        <div class="table-responsive">
+                            <div class="container-fluid">
+                            <table id="adminProductsTable" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Brand</th>
+                                        <th>Quantity</th>
+                                        <th>Unit Price</th>
+                                        <th>Active</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </tr>
+                                </thead>
+
+                                <tfoot>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Brand</th>
+                                        <th>Quantity</th>
+                                        <th>Unit Price</th>
+                                        <th>Active</th>
+                                        <th>Edit</th> 
+                                        <th>Delete</th> 
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

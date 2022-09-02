@@ -2,109 +2,105 @@
 
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>	
 
-<div class="container">
+<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" trimDirectiveWhitespaces="true"%>
 
-    <div class="row">
+<spring:url var="css" value="/css" />
+<spring:url var="js" value="/js" />
+<spring:url var="video" value="/video"/>
 
-        <div class="col-md-6 col-md-offset-3">
+<c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 
-            <div class="panel panel-primary">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta name="robots" content="noindex,follow" />
+        <title>Shop - Billing</title>
 
-                <div class="panel-heading">
-                    <h4>Sign Up - Address</h4>
-                </div>
+        <script>
 
-                <div class="panel-body">
+            window.menu = '${title}';
 
-                    <sf:form
-                        method="POST"
-                        modelAttribute="billing"
-                        class="form-horizontal"
-                        id="billingForm"
-                        >
+            window.contextRoot = '${contextRoot}'
 
+        </script>
 
-                        <div class="form-group">
-                            <label class="control-label col-md-4" for="addressLineOne">Address Line One</label>
-                            <div class="col-md-8">
-                                <sf:input type="text" path="addressLineOne" class="form-control"
-                                          placeholder="Enter Address Line One" />
-                                <sf:errors path="addressLineOne" cssClass="help-block" element="em"/> 
-                            </div>
-                        </div>
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
 
-                        <div class="form-group">
-                            <label class="control-label col-md-4" for="addressLineTwo">Address Line Two</label>
-                            <div class="col-md-8">
-                                <sf:input type="text" path="addressLineTwo" class="form-control"
-                                          placeholder="Enter Address Line Two" />
-                                <sf:errors path="addressLineTwo" cssClass="help-block" element="em"/> 
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-md-4" for="city">City</label>
-                            <div class="col-md-8">
-                                <sf:input type="text" path="city" class="form-control"
-                                          placeholder="Enter City Name" />
-                                <sf:errors path="city" cssClass="help-block" element="em"/> 
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-md-4" for="postalCode">Postal Code</label>
-                            <div class="col-md-8">
-                                <sf:input type="text" path="postalCode" class="form-control"
-                                          placeholder="XXXXXXXXX" />
-                                <sf:errors path="postalCode" cssClass="help-block" element="em"/> 
-                            </div>
-                        </div>							
-
-                        <div class="form-group">
-                            <label class="control-label col-md-4" for="state">State</label>
-                            <div class="col-md-8">
-                                <sf:input type="text" path="state" class="form-control"
-                                          placeholder="Enter State Name" />
-                                <sf:errors path="state" cssClass="help-block" element="em"/> 
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-md-4" for="country">Country</label>
-                            <div class="col-md-8">
-                                <sf:input type="text" path="country" class="form-control"
-                                          placeholder="Enter Country Name" />
-                                <sf:errors path="country" cssClass="help-block" element="em"/> 
-                            </div>
-                        </div>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+        <link href="${css}/billing.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="icon" href="http://vladmaxi.net/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="http://vladmaxi.net/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
 
 
-                        <div class="form-group">
-                            <div class="col-md-offset-4 col-md-8">
-                                <button type="submit" name="_eventId_personal" class="btn btn-primary">
-                                    <span class="glyphicon glyphicon-chevron-left"></span> Back - Personal
-                                </button>								
-                                <button type="submit" name="_eventId_confirm" class="btn btn-primary">
-                                    Next - Confirm<span class="glyphicon glyphicon-chevron-right"></span>
-                                </button>																	 
-                            </div>
-                        </div>
+        <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
+    </head>
 
-                    </sf:form>					
+    <body>
 
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
-                </div>
-
-
+            <div class="navbar-header">
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/home">Shop</a>
             </div>
+
+        </nav>
+
+        <div id="billing">
+
+            <h3 class="text-center">BILLING</h3>
+            &nbsp;&nbsp;&nbsp;
+
+            <sf:form
+                method="POST"
+                modelAttribute="billing"
+                class="form-horizontal"
+                id="billingForm"
+                >
+
+                <fieldset class="clearfix">
+
+                    <sf:errors path="addressLineOne" cssClass="help-block" element="em"/> 
+                    <p><i class="bi bi-geo-alt-fill"></i><sf:input type="text" path="addressLineOne" name="addressLineOne" id="addressLineOne"
+                              placeholder="Address Line One" /></p>
+
+                    <sf:errors path="addressLineTwo" cssClass="help-block" element="em"/> 
+                    <p><i class="bi bi-geo-alt-fill"></i><sf:input type="text" path="addressLineTwo" name="addressLineTwo" id="addressLineTwo"
+                              placeholder="Address Line Two" /></p>
+
+                    <sf:errors path="city" cssClass="help-block" element="em"/> 
+                    <p><i class="bi bi-building"></i><sf:input type="text" path="city" name="city" id="city"
+                              placeholder="City Name" /></p>
+
+                    <sf:errors path="postalCode" cssClass="help-block" element="em"/> 
+                    <p> <i class="bi bi-mailbox"></i> <sf:input type="text" path="postalCode" name="postalCode" id="postalCode"
+                              placeholder="Postal Code" /></p>
+
+                    <sf:errors path="state" cssClass="help-block" element="em"/> 
+                    <p><i class="bi bi-reception-4"></i><sf:input type="text" path="state" name="state" id="state"
+                              placeholder="State Name" /></p>
+
+                    <sf:errors path="country" cssClass="help-block" element="em"/>
+                    <p><i class="bi bi-flag"></i><sf:input type="text" path="country" name="country" id="country"
+                              placeholder="Country Name"/></p>
+
+                    <p><input type="submit" name="_eventId_personal" value="Back - Personal"/></p>
+                    <p><span class="glyphicon glyphicon-chevron-right"></span><input type="submit" name="_eventId_confirm" value="Next - Confirm"/></p>
+
+                </fieldset>
+            </sf:form>					
 
 
         </div>
 
 
-    </div>
-
-</div>
-
-<%@include file="../fragment/flows-footer.jsp"%>
+    </body>

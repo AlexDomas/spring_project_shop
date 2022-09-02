@@ -1,24 +1,119 @@
-</div>
+<div>
 
-            <!-- Footer-->
-            <footer class="about footer_area">
-                <jsp:include page="../../fragment/footer.jsp" />
-            </footer>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-            <script src="${js}/jquery.js"></script>
-            <script src="${js}/jquery.dataTables.js"></script>
-            <script src="${js}/dataTables.bootstrap.js"></script>
-            <script src="${js}/bootstrap.min.js"></script>
-            <script src="${js}/scripts.js"></script>
-            <script src="${js}/singleProduct.js"></script>
-            <script src="${js}/bootbox.min.js"></script>
-            
-            <script src="${js}/jquery.validate.js"></script>
+    <!-- Footer-->
+    <footer class="about footer_area">
+        <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" trimDirectiveWhitespaces="true"%>
 
-            <script src="${js}/app.js"></script>
-            <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <video class="video_media"  src="${pageContext.request.contextPath}/video/circuit.mp4" 
+               autoplay muted loop>
+        </video>
+        <div class="container">
 
+            <div class="row">
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="single_ftr">
+                        <h4 class="sf_title">Contacts</h4>
+                        <ul class="ul_footer">
+                            <li>4080 Repperts Coaol Road Sackson, MS 00201 USA</li>
+                            <li>(+44) 598 19 54 <br> (+44) 366 55 01</li>
+                            <li>Contact Us aleksej.domas@mail.ru</li>
+                        </ul>
+                    </div>
+                </div> <!--  End Col -->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="single_ftr">
+                        <h4 class="sf_title">Information</h4>
+                        <ul class="ul_footer">
+                            <li ><a style="text-decoration: none; margin-left: 120px; " href="#">About Us</a></li>
+                            <li><a style="text-decoration: none; margin-left: 120px;" href="#">Delivery Information</a></li>
+                            <li><a style="text-decoration: none; margin-left: 120px;" href="#">Privacy Policy</a></li>
+                            <li><a style="text-decoration: none; margin-left: 120px;" href="#">Terms & Conditions</a></li>
+                            <li><a style="text-decoration: none; margin-left: 120px;" href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div> <!--  End Col -->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="single_ftr">
+                        <h4 class="sf_title">Services</h4>
+                        <ul class="ul_footer">
+                            <li><a style="text-decoration: none; margin-left: 120px; " href="#">Returns</a></li>
+                            <li><a style="text-decoration: none; margin-left: 120px; " href="#">Site Map</a></li>
+                            <li><a style="text-decoration: none; margin-left: 120px; " href="#">Wish List</a></li>
+                            <li><a style="text-decoration: none; margin-left: 120px; " href="#">My Account</a></li>
+                            <li><a style="text-decoration: none; margin-left: 120px; " href="#">Order History</a></li>
+                        </ul>
+                    </div>
+                </div> <!--  End Col -->	
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="single_ftr">
+                        <h4 class="sf_title">Newsletter</h4>
+                        <div class="newsletter_form">
+                            <p style="font-family: 'Arial', 'Helvetica', sans-serif;">There are many variations of passages of Lorem Ipsum available, but the majority have </p>
+                            <form method="post" class="form-inline">				
+                                <input name="EMAIL" id="email" placeholder="Enter Your Email" class="form-control" type="email">
+                                <button type="submit" class="btn btn-default"><i class="bi bi-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div> <!--  End Col -->
+
+            </div>
         </div>
-    </body>
+
+
+        <div class="ftr_btm_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="ftr_social_icon">
+                            <ul class="ul_footer">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <p class="copyright_text text-center">© 2021 All Rights Reserved Bootstrap 4 footer</p>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="payment_mthd_icon text-right">
+                            <ul class="ul_footer">
+                                <li><i class="bi bi-paypal"></i></li>
+                                <li><i class="fa fa-cc-visa"></i></li>
+                                <li><i class="fa fa-cc-discover"></i></li>
+                                <li><i class="fa fa-cc-mastercard"></i></li>
+                                <li><i class="fa fa-cc-amex"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+    <script src="${js}/jquery.js"></script>
+    <script src="${js}/jquery.dataTables.js"></script>
+    <script src="${js}/dataTables.bootstrap.js"></script>
+    <script src="${js}/bootstrap.min.js"></script>
+    <script src="${js}/scripts.js"></script>
+    <script src="${js}/singleProduct.js"></script>
+    <script src="${js}/bootbox.min.js"></script>
+
+    <script src="${js}/jquery.validate.js"></script>
+
+    <script src="${js}/app.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+</div>
+</body>
 </html>

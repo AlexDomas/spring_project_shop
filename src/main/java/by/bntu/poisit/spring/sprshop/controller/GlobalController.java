@@ -1,9 +1,9 @@
 package by.bntu.poisit.spring.sprshop.controller;
 
-import by.bntu.poisit.spring.sprshop.dto.User;
-import by.bntu.poisit.spring.sprshop.model.UserModel;
+import by.bntu.poisit.spring.sprshop.entity.User;
+import by.bntu.poisit.spring.sprshop.dto.UserProfileDataDto;
 import by.bntu.poisit.spring.sprshop.service.UserService;
-import by.bntu.poisit.spring.sprshop.util.UserMapper;
+import by.bntu.poisit.spring.sprshop.util.UserProfileDataMapper;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -21,22 +21,22 @@ public class GlobalController {
     private UserService userService;
 
     @Autowired
-    private UserMapper userMapper;
+    private UserProfileDataMapper userMapper;
 
-    @ModelAttribute("userModel")
-    public UserModel getUserModel() {
-        if (session.getAttribute("userModel") == null) {
+    @ModelAttribute("userProfileDataDto")
+    public UserProfileDataDto getUserDto() {
+        if (session.getAttribute("userProfileDataDto") == null) {
             //add the user model
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             User user = userService.getUserByEmail(authentication.getName());
             if (user != null) {
-                //create a new UserModel object to pass the user details
-                UserModel userModel = userMapper.toUserModel(user);
-                session.setAttribute("userModel", userModel);
-                return userModel;
+                //create a new UserDto object to pass the user details
+                UserProfileDataDto userDto = userMapper.createUserDto(user);
+                session.setAttribute("userProfileDataDto", userDto);
+                return userDto;
             }
         }
-        return (UserModel) session.getAttribute("userModel");
+        return (UserProfileDataDto) session.getAttribute("userProfileDataDto");
     }
 
 }

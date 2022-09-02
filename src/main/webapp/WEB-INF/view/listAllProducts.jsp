@@ -13,8 +13,6 @@
 
                 <div class="row">
 
-
-
                     <div class="col-lg-12">
 
                         <c:if test="${userClickAllProducts == true}">
@@ -23,14 +21,6 @@
                                 window.categoryId = '';
 
                             </script>
-
-                            <ol class="breadcrumb">
-
-                                <li class="breadcrumb-item active"><a href="${pageContext.request.contextPath}/home">Home</a></li>
-                                <li class="breadcrumb-item active">All Products</li>
-
-
-                            </ol>
 
                         </c:if>
 
@@ -41,38 +31,32 @@
 
                             </script>
 
-                            <ol class="breadcrumb">
-
-                                <li class="breadcrumb-item "><a  href="${pageContext.request.contextPath}/home">Home</a></li>
-                                <li class="breadcrumb-item active">Category</li>
-                                <li class="breadcrumb-item active">${category.name}</li>
-
-                            </ol>
-
                         </c:if>
-
-
 
                     </div>
 
                 </div>
 
+                &nbsp;
                 <div class="row">
                     <div class="col-xs-9">
 
-                        <div class="container-fluid">
-                            <div class="table-responsive">
-                                <table id="productListTable" class="table table-borderd">
+                        <div class="table-responsive">
+
+                            <div class="container-fluid">
+
+                                <table id="productListTable" class="table table-bordered">
 
                                     <thead>
 
                                         <tr>
-                                            <th></th>
+                                            <th>Image</th>
                                             <th>Name</th>
                                             <th>Brand</th>
                                             <th>Price</th>
                                             <th>Qty. Available</th>
-                                            <th></th>
+                                            <th>Show Single Product</th>
+                                            <th>Add To Shopping Cart</th>
                                         </tr>
 
                                     </thead>
@@ -80,12 +64,13 @@
                                     <tfoot>
 
                                         <tr>
-                                            <th></th>
+                                            <th>Image</th>
                                             <th>Name</th>
                                             <th>Brand</th>
                                             <th>Price</th>
                                             <th>Qty. Available</th>
-                                            <th></th>
+                                            <th>Show Single Product</th>
+                                            <th>Add To Shopping Cart</th>
                                         </tr>
 
                                     </tfoot>
@@ -104,4 +89,5 @@
         </div>
 
     </div>
+
 </div>

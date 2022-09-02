@@ -78,6 +78,7 @@ a.paginate_active {
 a.paginate_button_disabled {
     color: #9400D3;
 }
+
 .paging_full_numbers a:active {
     outline: none
 }
@@ -90,7 +91,6 @@ div.dataTables_paginate span>a {
     text-align: center;
 }
 .dataTables_paginate a {
-
     padding: 1.25rem 2.25rem;
     font-size: 0.85rem;
     font-weight: 700;
@@ -101,12 +101,11 @@ div.dataTables_paginate span>a {
     font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-
-
 .productList{
     font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    color: #9400D3;
+    color: #00FA9A;
     background-color: #FFFFFF;
+    background-image: url(https://lookw.ru/12/1213/1638153411-1006.jpg);
 }
 
 #productListTable_paginate{
@@ -118,30 +117,78 @@ div.dataTables_paginate span>a {
 }
 
 .btn-interact{
-
     padding: 1rem 1.9rem;
     font-size: 1.20rem;
     font-weight: 800; 
     text-transform: uppercase;
     border: none;
     border-radius: 5rem;
-
-
 }
 
 .dataTableImg{
-
-    width: 200px;
-    height: auto;
-
-
-
+    width: auto;
+    height: 240px;
 }
 
 table {width: 100%; text-align: center; border-bottom: 2px solid #dfdfdf; border-radius: 6px; border-collapse: separate; border-spacing: 0px;}
-table thead tr {color: #ffffff; font-weight: bold; background: #9400D3;}
+table thead tr {color: #000; background: #fff;}
 table tr td {border-right: 1px solid #dfdfdf;}
 table tr td:last-child {border-right: 0px;}
 table tbody tr:nth-child(1n) {background: #FFFFFF;}
 
-/**table tbody tr:hover {background: #FFF000; transition-duration: 0.6s;}**/
+.product-name{
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 400;
+    color: #000;
+    font-size: 22px;
+}
+
+.product-info{
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 400;
+    color: #000;
+    font-size: 19px;
+}
+
+#product-price{
+    
+    font-size: 21px;
+}
+
+.article{
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 400;
+    color: #000;
+    font-size: 28px;
+}
+
+.desc-option{
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 100;
+    color: #000;
+    font-size: 17px;
+}
+
+hr{
+    margin-bottom: 30px;
+    background: #000;
+}
+
+.button-pop-product{
+    font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    padding: 1.25rem 2.25rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    text-decoration: none;
+    border-radius: 10rem;
+    background-color: #9400D3;
+    color: #fff;
+}
+
+.button-pop-product:hover {
+	background-color: #00FA9A;
+        color: black;
+}
+

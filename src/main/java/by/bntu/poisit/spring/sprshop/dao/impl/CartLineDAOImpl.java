@@ -1,13 +1,15 @@
 package by.bntu.poisit.spring.sprshop.dao.impl;
 
 import by.bntu.poisit.spring.sprshop.dao.CartLineDAO;
-import by.bntu.poisit.spring.sprshop.dto.CartLine;
+import by.bntu.poisit.spring.sprshop.entity.CartLine;
 import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import static by.bntu.poisit.spring.sprshop.constants.SQLContants.*;
+import static by.bntu.poisit.spring.sprshop.constant.SQLConstant.*;
+import by.bntu.poisit.spring.sprshop.entity.Cart;
+import by.bntu.poisit.spring.sprshop.entity.OrderDetail;
 
 @Repository("cartLineDAO")
 public class CartLineDAOImpl implements CartLineDAO {
@@ -98,6 +100,31 @@ public class CartLineDAOImpl implements CartLineDAO {
                 .getCurrentSession()
                 .createQuery(SELECT_ALL_CARTLINES, CartLine.class)
                 .getResultList();
+    }
+
+    @Override
+    public boolean updateCart(Cart cart) {
+        try {
+            sessionFactory
+                    .getCurrentSession()
+                    .update(cart);
+            return true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean addOrderDetail(OrderDetail orderDetail) {
+        try {
+            sessionFactory
+                    .getCurrentSession()
+                    .persist(orderDetail);
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
     }
 
 }

@@ -1,4 +1,3 @@
-
 package by.bntu.poisit.spring.sprshop.configuration;
 
 import java.util.Properties;
@@ -16,7 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 @Configuration
-@ComponentScan(basePackages={"by.bntu.poisit.spring.sprshop.dto"})
+@ComponentScan(basePackages={"by.bntu.poisit.spring.sprshop.entity"})
 @EnableTransactionManagement
 @PropertySource("classpath:application.properties")
 public class HibernateConfig {
@@ -57,7 +56,7 @@ public class HibernateConfig {
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource);
 		
 		builder.addProperties(getHibernateProperties());
-		builder.scanPackages("by.bntu.poisit.spring.sprshop.dto");
+		builder.scanPackages("by.bntu.poisit.spring.sprshop.entity");
 		
 		return builder.buildSessionFactory();
 		

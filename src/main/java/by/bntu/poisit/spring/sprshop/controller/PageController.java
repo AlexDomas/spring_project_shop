@@ -1,7 +1,7 @@
 package by.bntu.poisit.spring.sprshop.controller;
 
-import by.bntu.poisit.spring.sprshop.dto.Category;
-import by.bntu.poisit.spring.sprshop.dto.Product;
+import by.bntu.poisit.spring.sprshop.entity.Category;
+import by.bntu.poisit.spring.sprshop.entity.Product;
 import by.bntu.poisit.spring.sprshop.exception.ProductNotFoundException;
 import by.bntu.poisit.spring.sprshop.service.CategoryService;
 import by.bntu.poisit.spring.sprshop.service.ProductService;
@@ -34,10 +34,6 @@ public class PageController {
     public String home(Model model) {
 
         model.addAttribute("title", "Home");
-
-        logger.info("Inside PageController home method");
-        logger.debug("Inside PageController home method - DEBUG");
-
         model.addAttribute("userClickHome", true);
         return "page";
 
@@ -63,6 +59,7 @@ public class PageController {
 
     @RequestMapping(value = "/popularProducts")
     public String popularProducts(Model model) {
+        
         model.addAttribute("title", "PopularProducts");
         model.addAttribute("categories", categoryService.list());
         model.addAttribute("userClickPopularProducts", true);
@@ -180,7 +177,7 @@ public class PageController {
         return "error";
     }
     
-    @RequestMapping(value = "/permorm-logout")
+    @RequestMapping(value = "/perform-logout")
     public String logout(HttpServletRequest request, HttpServletResponse response){
         //first we are going to fetch the authentication
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

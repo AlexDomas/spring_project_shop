@@ -5,8 +5,9 @@
 <div id="productCatalog" class="panel panel-default collapse">
    
 
-    
-    <div style="font-weight: bold;" class="panel-heading"> Product catalog</div>
+    &nbsp;
+    <div class="panel-name"> Product catalog</div>
+    &nbsp;
     <div class="list-group">
         <c:forEach items="${categories}" var="category">
 		<a href="${pageContext.request.contextPath}/show/category/${category.id}/products" class="list-group-item" id="a_${category.name}">${category.name}</a>

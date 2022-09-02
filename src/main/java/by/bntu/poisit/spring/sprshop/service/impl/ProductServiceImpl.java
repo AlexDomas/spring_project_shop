@@ -2,7 +2,7 @@
 package by.bntu.poisit.spring.sprshop.service.impl;
 
 import by.bntu.poisit.spring.sprshop.dao.ProductDAO;
-import by.bntu.poisit.spring.sprshop.dto.Product;
+import by.bntu.poisit.spring.sprshop.entity.Product;
 import by.bntu.poisit.spring.sprshop.service.ProductService;
 import java.util.List;
 import javax.transaction.Transactional;
@@ -61,6 +61,18 @@ public class ProductServiceImpl implements ProductService{
     @Transactional
     public boolean delete(Product product) {
         return productDAO.delete(product);
+    }
+    
+    @Override
+    @Transactional
+    public boolean deleteProduct(int id) {
+        return productDAO.deleteProduct(id);
+    }
+
+    @Override
+    @Transactional
+    public List<Product> getProductsByParam(String param, int count) {
+        return productDAO.getProductsByParam(param, count);
     }
     
 }
